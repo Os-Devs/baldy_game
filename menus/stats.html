@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../style.css">
+  <title>Stats</title>
+</head>
+<body>
+  <div class="title">Character Stats</div>
+  <div id="stats-list"></div>
+  <script>
+    const player = JSON.parse(localStorage.getItem('playerData'));
+    const list = document.getElementById('stats-list');
+    
+    for (const [stat, value] of Object.entries(player.stats)) {
+      const div = document.createElement('div');
+      div.textContent = `${stat}: ${value}`;
+      list.appendChild(div);
+    }
+  </script>
+</body>
+</html>

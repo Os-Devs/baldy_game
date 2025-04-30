@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../style.css">
+  <title>Inventory</title>
+</head>
+<body>
+  <div class="title">Inventory</div>
+  <div id="inventory-list"></div>
+  <script>
+    const player = JSON.parse(localStorage.getItem('playerData'));
+    const list = document.getElementById('inventory-list');
+    
+    player.inventory.forEach(item => {
+      const div = document.createElement('div');
+      div.textContent = `- ${item}`;
+      list.appendChild(div);
+    });
+  </script>
+</body>
+</html>

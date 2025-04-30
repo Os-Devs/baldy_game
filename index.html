@@ -7,27 +7,24 @@
 </head>
 <body>
   <div id="app-container">
-    
-    <!-- LEFT: Main game screen -->
+    <!-- RIGHT: Main game screen -->
     <div id="main-screen">
       <div class="title">Adventure Log</div>
       <div id="story">Welcome, adventurer.</div>
       <div id="choices"></div>
     </div>
 
-    <!-- RIGHT: Sidebar menu -->
-    <div id="menu-screen">
-      <div class="title">Menu</div>
+    <!-- LEFT: Menu buttons -->
+    <div id="side-menu">
+      <div class="title">Actions</div>
       <div id="menu-buttons">
         <button onclick="showMenu('inventory')">Inventory</button>
         <button onclick="showMenu('stats')">Stats</button>
         <button onclick="showMenu('quests')">Quests</button>
       </div>
-      <div id="menu-content"></div>
     </div>
-
+  
   </div>
-
 
   <script src="renderer.js"></script>
 </body>

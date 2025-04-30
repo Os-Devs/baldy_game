@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../style.css">
+  <title>Quests</title>
+</head>
+<body>
+  <div class="title">Active Quests</div>
+  <div id="quests-list"></div>
+  <script>
+    const player = JSON.parse(localStorage.getItem('playerData'));
+    const list = document.getElementById('quests-list');
+    
+    player.quests.forEach(quest => {
+      const div = document.createElement('div');
+      div.textContent = `- ${quest}`;
+      list.appendChild(div);
+    });
+  </script>
+</body>
+</html>

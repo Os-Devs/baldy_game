@@ -1,42 +1,16 @@
+// renderer.js
+const { ipcRenderer } = require('electron');
+
 const player = {
-    health: 100,
-    inventory: ["Sword", "Health Potion"],
-    quests: ["Find the amulet"],
-    stats: { strength: 5, agility: 3, intellect: 4 }
-  };
-  
+  health: 100,
+  inventory: ["Sword", "Health Potion"],
+  quests: ["Find the amulet"],
+  stats: { strength: 5, agility: 3, intellect: 4 }
+};
+
   function addStory(text) {
     const story = document.getElementById("story");
     story.innerText += `\n> ${text}`;
-  }
-  
-  function showMenu(menu) {
-    const content = document.getElementById("menu-content");
-    content.innerHTML = "";
-  
-    if (menu === "inventory") {
-      const ul = document.createElement("ul");
-      player.inventory.forEach(item => {
-        const li = document.createElement("li");
-        li.textContent = item;
-        ul.appendChild(li);
-      });
-      content.appendChild(ul);
-    } else if (menu === "stats") {
-      for (let stat in player.stats) {
-        const p = document.createElement("p");
-        p.textContent = `${stat}: ${player.stats[stat]}`;
-        content.appendChild(p);
-      }
-    } else if (menu === "quests") {
-      const ul = document.createElement("ul");
-      player.quests.forEach(quest => {
-        const li = document.createElement("li");
-        li.textContent = quest;
-        ul.appendChild(li);
-      });
-      content.appendChild(ul);
-    }
   }
   
   function loadChoices() {
@@ -54,9 +28,15 @@ const player = {
     choices.appendChild(btn1);
     choices.appendChild(btn2);
   }
+
+  function showMenu(menuType) {
+    // Save player data to localStorage
+    localStorage.setItem('playerData', JSON.stringify(player));
+    // Send request to main process to open window
+    ipcRenderer.send('open-menu', menuType);
+  }
   
   window.onload = () => {
     loadChoices();
-    showMenu("inventory"); // Default sidebar view
   };
   

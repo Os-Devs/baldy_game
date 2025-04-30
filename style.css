@@ -1,51 +1,75 @@
+#choices {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#choices button {
+  background-color: #111;
+  color: #0f0;
+  border: 1px solid #0f0;
+  padding: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: monospace;
+}
+
+#choices button:hover {
+  background-color: #0f0;
+  color: #111;
+  border-color: #0f0;
+}
+
+#choices button:active {
+  transform: translateY(1px);
+}
+
+
 body {
-    font-family: monospace;
-    background-color: black;
-    color: #0f0;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-  
-  #app-container {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-  }
-  
-  #main-screen {
-    flex: 2;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid #0f0;
-    overflow-y: auto;
-  }
-  
-  #menu-screen {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    background-color: #111;
-    overflow-y: auto;
-  }
-  
-  #choices button,
-  #menu-buttons button {
-    background-color: black;
-    color: #0f0;
-    border: 1px solid #0f0;
-    padding: 10px;
-    margin: 5px 0;
-    width: 100%;
-    cursor: pointer;
-  }
-  
-  .title {
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-size: 1.2em;
-    color: #0f0;
-  }
-  
+  font-family: monospace;
+  background-color: black;
+  color: #0f0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+#side-menu {
+  width: 200px;
+  padding: 20px;
+  border-right: 1px solid #0f0;
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+}
+
+#main-screen {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+#menu-buttons button {
+  background-color: black;
+  color: #0f0;
+  border: 1px solid #0f0;
+  padding: 10px;
+  margin: 5px 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #0f0;
+}
