@@ -2,30 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
-  <title>Text RPG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/main_style.css">
+  <link rel="stylesheet" href="index.css">
+  <title>Document</title>
 </head>
 <body>
-  <div id="app-container">
-    <!-- RIGHT: Main game screen -->
-    <div id="main-screen">
-      <div class="title">Adventure Log</div>
-      <div id="story">Welcome, adventurer.</div>
-      <div id="choices"></div>
+  <div id="main_menu">
+    <div id="main_menu_title">
+      <h1>Welcome Adventurer!</h1>
     </div>
 
-    <!-- LEFT: Menu buttons -->
-    <div id="side-menu">
-      <div class="title">Actions</div>
-      <div id="menu-buttons">
-        <button onclick="showMenu('inventory')">Inventory</button>
-        <button onclick="showMenu('stats')">Stats</button>
-        <button onclick="showMenu('quests')">Quests</button>
-      </div>
+    <div id="main_menu_options">
+      <button>START</button>
+      <button>LOAD</button>
+      <button>OBTIONS</button>
+
     </div>
-  
   </div>
-
   <script src="renderer.js"></script>
 </body>
 </html>

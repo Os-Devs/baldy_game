@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../style/main_style.css">
+  <title>Text RPG</title>
+</head>
+<body>
+  <div id="app-container">
+    <!-- RIGHT: Main game screen -->
+    <div id="main-screen">
+      <div class="title">Adventure Log</div>
+      <div id="story">Welcome, adventurer.</div>
+      <div id="choices"></div>
+    </div>
+
+    <!-- LEFT: Menu buttons -->
+    <div id="side-menu">
+      <div class="title">Actions</div>
+      <div id="menu-buttons">
+        <button onclick="showMenu('inventory')">Inventory</button>
+        <button onclick="showMenu('stats')">Stats</button>
+        <button onclick="showMenu('quests')">Quests</button>
+      </div>
+    </div>
+  
+  </div>
+
+  <script src="../renderer.js"></script>
+</body>
+</html>
